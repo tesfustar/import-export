@@ -8,7 +8,7 @@ import {
   DrawerCloseButton,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-
+import Logo from "../assets/logo-white.png";
 const Sidebar = ({ toggle, isOpen }) => {
   return (
     <>
@@ -18,7 +18,7 @@ const Sidebar = ({ toggle, isOpen }) => {
           <DrawerCloseButton onClick={toggle} bg="white" />
           <DrawerHeader>
             <Link to="/">
-              <img src="afro.png" alt="" className="h-6" />
+              <img src={Logo} alt="" className="h-10" />
             </Link>
           </DrawerHeader>
           <DrawerBody>

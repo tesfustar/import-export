@@ -4,6 +4,7 @@ import { IoLogoTwitter } from "react-icons/io";
 import {BiMap,BiPhoneCall} from 'react-icons/bi'
 import { GrFacebookOption, GrYoutube, GrLinkedinOption } from "react-icons/gr";
 import { BiChevronDown, BiChevronRight } from "react-icons/bi";
+import Logo from "../assets/logo-white.png";
 import {AiOutlineMail} from 'react-icons/ai'
 const Footer = () => {
   return (
@@ -11,7 +12,7 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto py-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5">
         <div className="flex flex-col items-start space-y-3">
           <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMoqix_7TTPTZ-g9NjLpruildmCXSlMGsqGQ&usqp=CA"
+            src={Logo}
             alt=""
             className="h-16"
           />
