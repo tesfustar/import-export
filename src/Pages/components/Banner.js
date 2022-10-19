@@ -56,7 +56,8 @@ const Banner = () => {
         // fadeEffect={{ crossFade: true }}
         className="mySwiper"
       >
-         <div className="absolute w-full top-[80%] space-x-12  md:top-1/2 z-40 flex items-center justify-center md:justify-between md:px-10">
+         <div className="absolute w-full top-[80%] space-x-12 
+          md:top-1/2 z-40 flex items-center justify-center md:justify-between md:px-10">
       
       <div ref={navigationNextRef}  className="cursor-pointer
        bg-main-bg m-1 p-2 rounded-md hover:bg-[#1a839f] transition-all duration-300 ease-out">
@@ -80,11 +81,11 @@ const Banner = () => {
                 position: "relative",
               }}
             >
-              <div className="absolute inset-0 bg-gradient-to-t from-[#141414] to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0f4c5c] to-transparent" />
               <div className="absolute z-30 top-[20%] flex flex-col items-start pl-3 md:pl-0 w-full">
                 <div className="max-w-6xl mx-auto  w-full space-y-2 p-3 md:p-1 ">
                   <div className="flex flex-col items-start justify-start space-y-2 max-w-3xl">
-                    <h1 className="font-bold text-2xl md:text-7xl text-white">
+                    <h1 className="font-bold text-4xl capitalize md:text-7xl text-white">
                       {item.title}{" "}
                     </h1>
                     <p className="font-normal text-white">{item.body}</p>

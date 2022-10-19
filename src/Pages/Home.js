@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import two from "../assets/restone.jpg";
+import two from "../assets/one.jpg";
 import Banner from "./components/Banner";
 import OrderModal from "./components/OrderModal";
 import { FaHandshake } from "react-icons/fa";
