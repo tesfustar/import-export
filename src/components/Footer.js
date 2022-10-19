@@ -99,7 +99,7 @@ const Footer = () => {
               <div className="flex flex-col items-start ">
                 <p className="font-medium text-gray-300">Email</p>
                 <p className="text-sm text-gray-400">
-                 admin@gmail.com
+                tkimportandexport@gmail.com
                 </p>
               </div>
             </div>
@@ -109,7 +109,7 @@ const Footer = () => {
               <div className="flex flex-col items-start ">
                 <p className="font-medium text-gray-300">Phone</p>
                 <p className="text-sm text-gray-400">
-               +251944719460
+               +251 911 830 529 ,  +251 911 580 619
                 </p>
               </div>
             </div>

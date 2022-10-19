@@ -1,12 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import two from "../assets/restone.jpg";
 import { Input, Textarea } from "@chakra-ui/react";
 import { IoLogoTwitter } from "react-icons/io";
 import OrderModal from "./components/OrderModal";
 import { useMutation, useQuery } from "react-query";
+import { Circles } from "react-loader-spinner";
 import axios from "axios";
 const ImportServices = () => {
+  const navigate = useNavigate()
   const headers = {
     "Content-Type": "application/json",
     Accept: "application/json",
@@ -71,9 +73,10 @@ const ImportServices = () => {
           <div className="w-16 h-[3px] bg-main-bg" />
         </div>
 
-        <div className="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+        <div className="w-full">
           {servicesData.isFetched ? (
-            servicesData?.data?.data?.filter((item)=>item.type === "Import")?.map((item) => (
+           <div className="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+            { servicesData?.data?.data?.filter((item)=>item.type === "Import")?.map((item) => (
               <div key={item.id} className="bg-white shadow-md w-full overflow-hidden">
                 <img
                   src={item.service_photo}
@@ -92,11 +95,20 @@ const ImportServices = () => {
                   </p>
                 </div>
               </div>
-            ))
+            ))}
+           </div>
           ) : (
-            <div className="flex items-center justify p-3">
-              <h1 className="font-medium text-xl">Loading...</h1>
-            </div>
+            <div className="flex items-center justify-center p-20 w-full">
+            <Circles
+      height="80"
+      width="80"
+      color="#0f4c5c"
+      ariaLabel="circles-loading"
+      wrapperStyle={{}}
+      wrapperClass=""
+      visible={true}
+    />
+          </div>
           )}
         </div>
       </div>
@@ -118,11 +130,8 @@ const ImportServices = () => {
         <div className="absolute inset-0 bg-main-bg/40" />
         <div className="absolute z-30 top-1/4 flex flex-col items-center w-full p-3">
           <div className="max-w-6xl mx-auto flex flex-col space-y-3 items-center justify-center">
-            <h1 className="text-white font-medium text-xl">We provide</h1>
-            <h1 className="text-white font-semibold capitalize text-2xl md:text-5xl text-center">
-              The best sea and air freight services
-            </h1>
-            <button
+          <h3 className="text-white font-bold text-2xl md:text-4xl text-center">Want to work with our professional team? Do you have any questions?</h3>
+            <button onClick={()=>navigate('/contact')}
               className="font-medium bg-main-bg p-2 px-5 hover:bg-secondary-color
                text-white rounded-md hover:opacity-80"
             >

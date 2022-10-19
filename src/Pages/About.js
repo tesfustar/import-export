@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import two from "../assets/restone.jpg";
 import { FaHandshake } from "react-icons/fa";
 import { AiFillUnlock } from "react-icons/ai";
@@ -7,6 +7,7 @@ import { BsHandThumbsUpFill } from "react-icons/bs";
 import { HiLocationMarker, HiHandThumbUp } from "react-icons/hi";
 
 const About = () => {
+  const navigate = useNavigate()
   return (
     <div>
       <div
@@ -53,16 +54,7 @@ const About = () => {
             <div className="w-16 h-[3px] bg-main-bg" />
           </div>
           <p>
-            A general commercial firm founded in Addis Ababa, Ethiopia, by a
-            youthful and enthusiastic proprietor with vast experience in
-            producing and marketing agricultural products for the local market.
-            The company's principal goal is to export organic agricultural
-            products from farms to the international market in order to meet the
-            needs of its customers, as well as to import a diverse range of
-            products into Ethiopia, ranging from fast-moving consumer goods to
-            industrial equipment.The company has its own commercial farm of
-            2,500 hectors for cultivating green Mung bean, kidney bean, and
-            other crops.
+          Our company was established in Addis Ababa, Ethiopia. We have been specializing in import and export for quite some time. We import and export agricultural and non-agricultural products of all kinds. We are known for our work ethics, high-quality products, and excellent work reputation.
           </p>
         </div>
       </div>
@@ -77,8 +69,7 @@ const About = () => {
             <div className="w-16 h-[3px] bg-main-bg" />
           </div>
           <p>
-          Exceeding importers' expectations by supplying products obtained from the top farms in the country. Maintaining efficient and effective professional etiquette that leaves our customers delighted and satisfied in order to urge them to return to us for additional trade dealings and collaborations.
-          </p>
+          Exceeding our clients' expectations by supplying and transporting products obtained from the country's top farms while importing essential goods that assist our clients in achieving their objectives. Maintaining efficient and effective professional etiquette that delights and fulfills our clients.          </p>
         </div>
       </div>
       {/* vision */}
@@ -103,9 +94,11 @@ const About = () => {
             </h1>
             <div className="w-16 h-[3px] bg-main-bg" />
           </div>
-          <p>
-          To be known as an East African leading 
-          producer and exporter of organic and healthy agricultural products to the global market.          </p>
+         <li>Hard work</li>
+         <li>Professional etiquettes</li>
+         <li>High quality products and services</li>
+         <li>Excellent customer service</li>
+         <li>Confidentiality</li>
         </div>
       </div>
       {/* why you choose us */}
@@ -128,19 +121,19 @@ const About = () => {
               <div className="bg-main-bg p-5 rounded-full">
                 <AiFillUnlock size={80} className="text-white" />
               </div>
-              <h1 className="font-medium">The Best Security</h1>
+              <h1 className="font-medium">Secure and reliable</h1>
             </div>
             <div className="flex flex-col items-center space-y-2">
               <div className="bg-main-bg p-5 rounded-full">
                 <BsHandThumbsUpFill size={80} className="text-white" />
               </div>
-              <h1 className="font-medium">100% Guarantee</h1>
+              <h1 className="font-medium">Guarantee results</h1>
             </div>
             <div className="flex flex-col items-center space-y-2">
               <div className="bg-main-bg p-5 rounded-full">
                 <HiLocationMarker size={80} className="text-white" />
               </div>
-              <h1 className="font-medium">Quick Location</h1>
+              <h1 className="font-medium">Easy to find</h1>
             </div>
           </div>
         </div>
@@ -165,9 +158,9 @@ const About = () => {
           <div className="max-w-6xl mx-auto flex flex-col space-y-3 items-center justify-center">
             <h1 className="text-white font-medium text-xl">We provide</h1>
             <h1 className="text-white font-semibold capitalize text-2xl md:text-5xl text-center">
-              The best sea and air freight services
+              The best Import and Export services
             </h1>
-            <button
+            <button onClick={()=>navigate('/contact')}
               className="font-medium bg-main-bg p-2 px-5 hover:bg-secondary-color
                text-white rounded-md hover:opacity-80"
             >

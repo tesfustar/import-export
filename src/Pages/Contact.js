@@ -4,7 +4,10 @@ import two from "../assets/2.webp";
 import { Input, Textarea } from "@chakra-ui/react";
 import { IoLogoTwitter } from "react-icons/io";
 import emailjs from "@emailjs/browser";
+import { useToast, Checkbox } from "@chakra-ui/react";
+
 const Contact = () => {
+  const toast = useToast();
   const sendEmail = (e) => {
     e.preventDefault();
 
@@ -18,6 +21,12 @@ const Contact = () => {
       .then(
         (result) => {
           console.log(result.text);
+          toast({
+            title: "Subscribed successfully",
+            status: "info",
+            duration: 1800,
+            isClosable: true,
+          });
         },
         (error) => {
           console.log(error.text);
@@ -149,7 +158,9 @@ const Contact = () => {
               <IoLogoTwitter className="text-main-color" />
               <div className="flex flex-col items-start ">
                 <p className="font-medium text-dark-color">Email</p>
-                <p className="text-sm text-dark-gary">admin@gmail.com</p>
+                <p className="text-sm text-dark-gary">
+                  tkimportandexport@gmail.com
+                </p>
               </div>
             </div>
             {/* phone */}
@@ -157,7 +168,8 @@ const Contact = () => {
               <IoLogoTwitter className="text-main-color" />
               <div className="flex flex-col items-start ">
                 <p className="font-medium text-dark-color">Phone</p>
-                <p className="text-sm text-dark-gary">+251944719460</p>
+                <p className="text-sm text-dark-gary">+251 911 830 529</p>
+                <p className="text-sm text-dark-gary">+251 911 580 619</p>
               </div>
             </div>
           </div>
