@@ -151,10 +151,7 @@ const Home = () => {
               <div className="w-16 h-[3px] bg-main-bg" />
             </div>
             <p>
-              GSMS Trading & Logistics Plc is one of Ethiopia's leading Co. with
-              interests include Import, Export, Transport, Cement Distribution,
-              Domestic business Investment and sales of a variety of products
-              and services within and abroad.
+            Our company is found in Addis Abebe ,Ethiopia .We are a great export and importer. We export all types of agricultural products We are known by our work of ethics, high quality products and by a very good work reputation .
             </p>
           </div>
         </div>
