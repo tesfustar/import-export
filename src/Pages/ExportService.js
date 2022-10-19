@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import two from "../assets/three.jpg";
+import one from "../assets/one.jpg";
 import { Input, Textarea } from "@chakra-ui/react";
 import { IoLogoTwitter } from "react-icons/io";
 import OrderModal from "./components/OrderModal";
@@ -16,7 +17,7 @@ const ExportService = () => {
   const servicesData = useQuery(
     ["servicesDataApi"],
     async () =>
-      await axios.get(`http://simple.hulum.et/api/get-services`, {
+      await axios.get(`https://simple.hulum.et/api/get-services`, {
         headers,
       }),
     {
@@ -118,7 +119,7 @@ const ExportService = () => {
       {/*  */}
       <div
         style={{
-          backgroundImage: `url(${two})`,
+          backgroundImage: `url(${one})`,
           backgroundPosition: "center",
           width: "100%",
           minHeight: "400px",
