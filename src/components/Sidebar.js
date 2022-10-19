@@ -76,7 +76,12 @@ const Sidebar = ({ toggle, isOpen }) => {
                 </MenuList>
               </Menu>
               <div className="pt-10">
-                <button className="bg-white text-main-color flex md:hidden font-semibold rounded-sm p-2">
+                <button 
+                 onClick={() => {
+                  navigate("/contact");
+                  toggle();
+                }}
+                className="bg-white text-main-color flex md:hidden font-semibold rounded-sm p-2">
                   Contact
                 </button>
               </div>

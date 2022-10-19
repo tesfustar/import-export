@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import two from "../assets/restone.jpg";
+import two from "../assets/two.jpg";
 import { FaHandshake } from "react-icons/fa";
 import { AiFillUnlock } from "react-icons/ai";
 import { BsHandThumbsUpFill } from "react-icons/bs";
@@ -22,7 +22,7 @@ const About = () => {
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-t from-[#141414] to-transparent" />
-        <div className="absolute z-30 top-1/4 flex flex-col items-start w-full">
+        <div className="absolute z-30 top-[10%]  md:top-1/4 flex flex-col items-start w-full">
           <div className="max-w-6xl mx-auto  w-full grid grid-cols-1 md:grid-cols-2 gap-3 space-y-2 p-5 ">
             <div className="flex flex-col items-start space-y-2">
               <h1 className="font-semibold text-white text-4xl">About Us</h1>
@@ -36,8 +36,8 @@ const About = () => {
             <div className="flex items-start justify-start md:items-end md:justify-end max-w-lg">
               <p className="text-white font-medium text-lg text-start md:text-end">
                 We freight all over the world.The best logistics company,{" "}
-                <span className="text-main-color">FAST</span> and{" "}
-                <span className="text-main-color">SAFELY</span>
+                <span className="text-secondary-color">FAST</span> and{" "}
+                <span className="text-secondary-color">SAFELY</span>
               </p>
             </div>
           </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import two from "../assets/restone.jpg";
+import two from "../assets/three.jpg";
 import { Input, Textarea } from "@chakra-ui/react";
 import { IoLogoTwitter } from "react-icons/io";
 import OrderModal from "./components/OrderModal";
@@ -43,7 +43,7 @@ const ExportService = () => {
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-t from-[#141414] to-transparent" />
-        <div className="absolute z-30 top-1/4 flex flex-col items-start w-full">
+        <div className="absolute z-30 top-[10%]  md:top-1/4 flex flex-col items-start w-full">
           <div className="max-w-6xl mx-auto  w-full grid grid-cols-1 md:grid-cols-2 gap-3 space-y-2 p-5 ">
             <div className="flex flex-col items-start space-y-2">
               <h1 className="font-semibold text-white text-4xl">Services</h1>
