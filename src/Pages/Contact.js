@@ -5,9 +5,52 @@ import { Input, Textarea } from "@chakra-ui/react";
 import { IoLogoTwitter } from "react-icons/io";
 import emailjs from "@emailjs/browser";
 import { useToast, Checkbox } from "@chakra-ui/react";
+import axios from "axios";
+import { useMutation, useQuery } from "react-query";
 
 const Contact = () => {
+  const headers = {
+    "Content-Type": "application/json",
+    Accept: "application/json",
+  };
   const toast = useToast();
+  const loginMutation = useMutation(
+    async (newData) =>
+      await axios.post(`${process.env.REACT_APP_BACKEND_URL}contact-count`, newData, {
+        headers,
+      }),
+    {
+      retry: false,
+    }
+  );
+
+  const contactCountHandler = async (values) => {
+    try {
+
+      loginMutation.mutate({}, {
+        onSuccess: (responseData) => {
+          console.log(responseData?.data);
+        },
+        onError: (err) => {
+          toast.error(
+            err?.response?.data?.message,
+            { theme: "colored" },
+            {
+              position: "bottom-center",
+              autoClose: 3000,
+              hideProgressBar: true,
+              closeOnClick: true,
+              pauseOnHover: false,
+              draggable: true,
+              progress: undefined,
+            }
+          );
+        },
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  };
   const sendEmail = (e) => {
     e.preventDefault();
 
@@ -21,8 +64,9 @@ const Contact = () => {
       .then(
         (result) => {
           console.log(result.text);
+          contactCountHandler()
           toast({
-            title: "Subscribed successfully",
+            title: "Success",
             status: "info",
             duration: 1800,
             isClosable: true,
