@@ -17,8 +17,7 @@ const Footer = () => {
             className="h-16"
           />
           <p className="text-sm max-w-xs text-dark-gray">
-            Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor
-            ut labore et dolore magna aliqua. Quis facilisis.
+          Work with the best in the business. Contact us for any information
           </p>
           <div className="flex items-center space-x-2">
             <div className="bg-[#e36414] hover:bg-secondary-bg cursor-pointer transition-all ease-out duration-500 p-2 rounded-full">
