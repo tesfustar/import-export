@@ -17,7 +17,7 @@ const Home = () => {
   const servicesData = useQuery(
     ["servicesDataApi"],
     async () =>
-      await axios.get(`http://simple.hulum.et/api/services`, {
+      await axios.get(`http://simple.hulum.et/api/get-services`, {
         headers,
       }),
     {
@@ -134,7 +134,7 @@ const Home = () => {
               className="h-72"
             />
           </div>
-          <div>
+          <div className="p-5">
             <div className=" flex flex-col items-start  w-full space-y-2">
               <h1 className="font-bold uppercase text-xl md:text-2xl text-dark-color">
                 WHY SHOULD YOU CHOOSE US !
@@ -150,7 +150,7 @@ const Home = () => {
           </div>
         </div>
         {/* second grid */}
-        <div className="md:col-span-3 w-full">
+        <div className="md:col-span-3 w-full px-5">
           <div className="flex flex-col space-y-5  w-full">
             <div className="flex  items-center space-x-2">
               <div className="bg-main-bg p-3 rounded-full">

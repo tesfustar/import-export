@@ -8,11 +8,11 @@ import {
   MenuButton,
   MenuList,
   MenuItem,
+  Button,
   MenuItemOption,
   MenuGroup,
   MenuOptionGroup,
   MenuDivider,
-  Button,
 } from "@chakra-ui/react";
 import { BiChevronRight } from "react-icons/bi";
 const Navbar = () => {

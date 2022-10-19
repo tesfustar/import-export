@@ -3,7 +3,28 @@ import { Link } from "react-router-dom";
 import two from "../assets/2.webp";
 import { Input, Textarea } from "@chakra-ui/react";
 import { IoLogoTwitter } from "react-icons/io";
+import emailjs from "@emailjs/browser";
 const Contact = () => {
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        process.env.REACT_APP_SERVICE_ID,
+        process.env.REACT_APP_TEMPLATE_ID,
+        e.target,
+        process.env.REACT_APP_PUBLIC_KEY
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    e.target.reset();
+  };
   return (
     <div className="">
       <div
@@ -58,6 +79,7 @@ const Contact = () => {
               <div className="w-16 h-[3px] bg-main-bg" />
             </div>
             <form
+              onSubmit={sendEmail}
               action=""
               className="w-full pt-3 flex flex-col items-start space-y-3"
             >
@@ -69,30 +91,24 @@ const Contact = () => {
                   placeholder="Your Name"
                   fontWeight={500}
                   color={"#737b8b"}
+                  required
                 />
                 <Input
                   type="text"
-                  name=""
+                  name="email"
                   id=""
-                  placeholder="Company"
+                  placeholder="email"
                   fontWeight={500}
                   color={"#737b8b"}
+                  required
                 />
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 w-full">
+              <div className="grid grid-cols-1">
                 <Input
-                  type="text"
-                  name="name"
+                  type="tel"
+                  name="phone"
                   id=""
-                  placeholder="Your Email"
-                  fontWeight={500}
-                  color={"#737b8b"}
-                />
-                <Input
-                  type="text"
-                  name=""
-                  id=""
-                  placeholder="Phone"
+                  placeholder="Your Phone"
                   fontWeight={500}
                   color={"#737b8b"}
                 />
@@ -101,8 +117,10 @@ const Contact = () => {
                 placeholder="Your Message"
                 fontWeight={500}
                 color={"#737b8b"}
+                name="message"
               ></Textarea>
               <button
+                type="submit"
                 className="font-medium bg-main-bg p-2 px-5
                text-white rounded-md hover:opacity-80"
               >
@@ -131,9 +149,7 @@ const Contact = () => {
               <IoLogoTwitter className="text-main-color" />
               <div className="flex flex-col items-start ">
                 <p className="font-medium text-dark-color">Email</p>
-                <p className="text-sm text-dark-gary">
-                 admin@gmail.com
-                </p>
+                <p className="text-sm text-dark-gary">admin@gmail.com</p>
               </div>
             </div>
             {/* phone */}
@@ -141,9 +157,7 @@ const Contact = () => {
               <IoLogoTwitter className="text-main-color" />
               <div className="flex flex-col items-start ">
                 <p className="font-medium text-dark-color">Phone</p>
-                <p className="text-sm text-dark-gary">
-               +251944719460
-                </p>
+                <p className="text-sm text-dark-gary">+251944719460</p>
               </div>
             </div>
           </div>

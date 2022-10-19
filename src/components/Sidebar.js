@@ -6,10 +6,17 @@ import {
   DrawerOverlay,
   DrawerContent,
   DrawerCloseButton,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  Button,
 } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import { BiChevronRight } from "react-icons/bi";
+import { Link, useNavigate } from "react-router-dom";
 import Logo from "../assets/logo-white.png";
 const Sidebar = ({ toggle, isOpen }) => {
+  const navigate = useNavigate();
   return (
     <>
       <Drawer placement="right" onClose={toggle} isOpen={isOpen}>
@@ -37,22 +44,45 @@ const Sidebar = ({ toggle, isOpen }) => {
               >
                 About
               </Link>
-              <Link
-                to="/services"
-                className="font-medium uppercase text-white"
-                onClick={toggle}
-              >
-                Services
-              </Link>
 
-               <div className="pt-10">
-               <button   className="bg-white text-main-color flex md:hidden font-semibold rounded-sm p-2">Contact</button>
-
-               </div>
+              <Menu>
+                <MenuButton
+                  as={Button}
+                  rightIcon={<BiChevronRight />}
+                  fontWeight={"semibold"}
+                  backgroundColor={"transparent"}
+                  color={"white"}
+                  _hover={{ backgroundColor: "transparent" }}
+                >
+                  SERVICES
+                </MenuButton>
+                <MenuList zIndex={1000}>
+                  <MenuItem
+                    onClick={() => {
+                      navigate("/import/1");
+                      toggle();
+                    }}
+                  >
+                    Import
+                  </MenuItem>
+                  <MenuItem
+                    onClick={() => {
+                      navigate("/export/2");
+                      toggle();
+                    }}
+                  >
+                    Export
+                  </MenuItem>
+                </MenuList>
+              </Menu>
+              <div className="pt-10">
+                <button className="bg-white text-main-color flex md:hidden font-semibold rounded-sm p-2">
+                  Contact
+                </button>
+              </div>
             </div>
 
-            <DrawerFooter>
-            </DrawerFooter>
+            <DrawerFooter></DrawerFooter>
           </DrawerBody>
         </DrawerContent>
       </Drawer>

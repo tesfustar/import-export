@@ -157,6 +157,7 @@ const About = () => {
           backgroundRepeat: "no-repeat",
           position: "relative",
           backgroundAttachment: "fixed",
+          marginBottom:60
         }}
       >
         <div className="absolute inset-0 bg-main-bg/40" />

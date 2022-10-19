@@ -51,8 +51,14 @@ const Footer = () => {
           </div>
           <div className="flex items-center cursor-pointer space-x-1  text-dark-gray hover:text-[#e36414] transition-all ease-in-out duration-500">
             <BiChevronRight size={18} />
-            <Link to="/services" className="text-sm font-medium">
-              Services
+            <Link to="/import/1" className="text-sm font-medium">
+              Import
+            </Link>
+          </div>
+          <div className="flex items-center cursor-pointer space-x-1  text-dark-gray hover:text-[#e36414] transition-all ease-in-out duration-500">
+            <BiChevronRight size={18} />
+            <Link to="/export/2" className="text-sm font-medium">
+              Export
             </Link>
           </div>
           <div className="flex items-center cursor-pointer space-x-1  text-dark-gray hover:text-[#e36414] transition-all ease-in-out duration-500">

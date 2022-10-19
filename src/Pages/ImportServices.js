@@ -14,7 +14,7 @@ const ImportServices = () => {
   const servicesData = useQuery(
     ["servicesDataApi"],
     async () =>
-      await axios.get(`http://simple.hulum.et/api/services`, {
+      await axios.get(`http://simple.hulum.et/api/get-services`, {
         headers,
       }),
     {
@@ -73,7 +73,7 @@ const ImportServices = () => {
 
         <div className="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
           {servicesData.isFetched ? (
-            servicesData?.data?.data?.map((item) => (
+            servicesData?.data?.data?.filter((item)=>item.type === "Import")?.map((item) => (
               <div key={item.id} className="bg-white shadow-md w-full overflow-hidden">
                 <img
                   src={item.service_photo}

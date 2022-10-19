@@ -6,8 +6,9 @@ import two from "../../assets/restone.jpg";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
+import "swiper/css/autoplay";
 import "./style.css";
-import { EffectFade, Pagination } from "swiper";
+import { EffectFade, Pagination,Autoplay } from "swiper";
 import { useMutation, useQuery } from "react-query";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -20,7 +21,7 @@ const Banner = () => {
   const bannerData = useQuery(
     ["bannerDataApi"],
     async () =>
-      await axios.get(`http://simple.hulum.et/api/coursols`, {
+      await axios.get(`http://simple.hulum.et/api/get-coursols`, {
         headers,
       }),
     {
@@ -36,10 +37,10 @@ const Banner = () => {
     <div>
       <Swiper
         navigation={true}
-        modules={[Navigation]}
+        modules={[Navigation,Autoplay]}
         effect={"fade"}
         loop={true}
-        autoplay={true}
+        autoplay={{delay:3000}}
         className="mySwiper"
       >
         {bannerData?.data?.data?.map((item) => (
@@ -56,7 +57,7 @@ const Banner = () => {
               }}
             >
               <div className="absolute inset-0 bg-gradient-to-t from-[#141414] to-transparent" />
-              <div className="absolute z-30 top-1/4 flex flex-col items-start pl-12 md:pl-0 w-full">
+              <div className="absolute z-30 top-[10%] flex flex-col items-start pl-3 md:pl-0 w-full">
                 <div className="max-w-6xl mx-auto  w-full space-y-2 p-3 md:p-1 ">
                   <div className="flex flex-col items-start justify-start space-y-2 max-w-2xl">
                     <h1 className="font-bold text-2xl md:text-7xl text-white">
