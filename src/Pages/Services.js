@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import two from "../assets/restone.jpg";
+import two from "../assets/one.jpg";
 import { Input, Textarea } from "@chakra-ui/react";
 import { IoLogoTwitter } from "react-icons/io";
 import OrderModal from "./components/OrderModal";

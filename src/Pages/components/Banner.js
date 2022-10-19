@@ -2,7 +2,6 @@ import React,{useState} from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
 // Import Swiper styles
-import two from "../../assets/restone.jpg";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
