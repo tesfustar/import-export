@@ -19,7 +19,7 @@ const Home = () => {
   const servicesData = useQuery(
     ["servicesDataApi"],
     async () =>
-      await axios.get(`https://simple.hulum.et/api/get-services`, {
+      await axios.get(`${process.env.REACT_APP_BACKEND_URL}get-services`, {
         headers,
       }),
     {

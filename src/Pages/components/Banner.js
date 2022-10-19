@@ -25,7 +25,7 @@ const Banner = () => {
   const bannerData = useQuery(
     ["bannerDataApi"],
     async () =>
-      await axios.get(`https://simple.hulum.et/api/get-coursols`, {
+      await axios.get(`${process.env.REACT_APP_BACKEND_URL}get-coursols`, {
         headers,
       }),
     {
