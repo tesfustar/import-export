@@ -51,7 +51,7 @@ const Banner = () => {
         modules={[EffectFade,Navigation,Autoplay]}
         effect={"fade"}
         loop={true}
-        autoplay={{delay:5000,disableOnInteraction: true}}
+        autoplay={{delay:4000,disableOnInteraction: true}}
         // fadeEffect={{ crossFade: true }}
         className="mySwiper"
       >
