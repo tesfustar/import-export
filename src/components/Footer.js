@@ -88,7 +88,7 @@ const Footer = () => {
               <div className="flex flex-col items-start ">
                 <p className="font-medium text-gray-300">Address</p>
                 <p className="text-sm text-gray-400">
-                  Addis Ababa - Ethiopia Dembel City Center - Second Floor
+                Meskel Flower, Jeme'a BLDG 9th floor Addis Ababa Ethiopia
                 </p>
               </div>
             </div>
@@ -118,7 +118,7 @@ const Footer = () => {
       </div>
       <div className="flex items-center justify-center w-full md:items-start  md:justify-between flex-wrap border-t border-dark-gray py-2">
         <p className="text-[13px] text-center  text-dark-gray">
-          copyright <span className="text-white">© Cargo</span> | All right
+          copyright <span className="text-white">© Tesfaw Kelem</span> | All right
           reserved
         </p>
         <p className="text-[13px] text-dark-gray">

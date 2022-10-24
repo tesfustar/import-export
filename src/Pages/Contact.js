@@ -193,7 +193,7 @@ const Contact = () => {
               <div className="flex flex-col items-start ">
                 <p className="font-medium text-dark-color">Address</p>
                 <p className="text-sm text-dark-gary">
-                  Addis Ababa - Ethiopia Dembel City Center - Second Floor
+                Meskel Flower, Jeme'a BLDG 9th floor Addis Ababa Ethiopia
                 </p>
               </div>
             </div>
