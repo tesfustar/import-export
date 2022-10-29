@@ -59,11 +59,11 @@ const Banner = () => {
           md:top-1/2 z-40 flex items-center justify-center md:justify-between md:px-10">
       
       <div ref={navigationNextRef}  className="cursor-pointer
-       bg-main-bg m-1 p-2 rounded-md hover:bg-[#1a839f] transition-all duration-300 ease-out">
+       bg-main-bg m-1 p-2 rounded-md hover:bg-[#e36414] transition-all duration-300 ease-out">
       <FaChevronLeft className="text-white" size={20}/>
       </div>
        <div ref={navigationPrevRef} className="
-          cursor-pointer right-2 rounded-md bg-main-bg hover:bg-[#1a839f] transition-all duration-300 ease-out m-1 p-2">
+          cursor-pointer right-2 rounded-md bg-main-bg hover:bg-[#e36414] transition-all duration-300 ease-out m-1 p-2">
              <FaChevronRight className="text-white" size={20}/>
           </div>
          </div>
@@ -90,7 +90,7 @@ const Banner = () => {
                     <p className="font-normal text-white">{item.body}</p>
                     <button onClick={()=>navigate('/contact')}
                       className="font-medium bg-main-bg p-2 px-5
-               text-white rounded-md hover:opacity-80"
+               text-white rounded-md hover:bg-[#e36414]"
                     >
                       Contact Us
                     </button>
