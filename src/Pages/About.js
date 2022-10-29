@@ -5,9 +5,51 @@ import { FaHandshake } from "react-icons/fa";
 import { AiFillUnlock } from "react-icons/ai";
 import { BsHandThumbsUpFill } from "react-icons/bs";
 import { HiLocationMarker, HiHandThumbUp } from "react-icons/hi";
-
+import { useMutation, useQuery } from "react-query";
+import axios from "axios";
 const About = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const headers = {
+    "Content-Type": "application/json",
+    Accept: "application/json",
+  };
+
+  const blogsData = [
+    {
+      id: 1,
+      img: two,
+      description: "test description",
+    },
+    {
+      id: 2,
+      img: two,
+      description: "test description",
+    },
+    {
+      id: 3,
+      img: two,
+      description: "test description",
+    },
+    {
+      id: 4,
+      img: two,
+      description: "test description",
+    },
+  ];
+  const blogData = useQuery(
+    ["blogDataApi"],
+    async () =>
+      await axios.get(`http://simple.hulum.et/api/services`, {
+        headers,
+      }),
+    {
+      keepPreviousData: true,
+      refetchOnWindowFocus: false,
+      retry: false,
+      // enabled: !!token,
+      onSuccess: (res) => {},
+    }
+  );
   return (
     <div>
       <div
@@ -54,13 +96,17 @@ const About = () => {
             <div className="w-16 h-[3px] bg-main-bg" />
           </div>
           <p>
-          Our company was established in Addis Ababa, Ethiopia. We have been specializing in import and export for quite some time. We import and export agricultural and non-agricultural products of all kinds. We are known for our work ethics, high-quality products, and excellent work reputation.
+            Our company was established in Addis Ababa, Ethiopia. We have been
+            specializing in import and export for quite some time. We import and
+            export agricultural and non-agricultural products of all kinds. We
+            are known for our work ethics, high-quality products, and excellent
+            work reputation.
           </p>
         </div>
       </div>
 
-{/* mission */}
-<div className="max-w-6xl mx-auto p-5 py-10 ">
+      {/* mission */}
+      <div className="max-w-6xl mx-auto p-5 py-10 ">
         <div className="flex flex-col items-start space-y-2 w-full ">
           <div className="flex flex-col items-start w-full ">
             <h1 className="font-semibold uppercase text-2xl md:text-4xl   text-dark-color">
@@ -69,7 +115,12 @@ const About = () => {
             <div className="w-16 h-[3px] bg-main-bg" />
           </div>
           <p>
-          Exceeding our clients' expectations by supplying and transporting products obtained from the country's top farms while importing essential goods that assist our clients in achieving their objectives. Maintaining efficient and effective professional etiquette that delights and fulfills our clients.          </p>
+            Exceeding our clients' expectations by supplying and transporting
+            products obtained from the country's top farms while importing
+            essential goods that assist our clients in achieving their
+            objectives. Maintaining efficient and effective professional
+            etiquette that delights and fulfills our clients.{" "}
+          </p>
         </div>
       </div>
       {/* vision */}
@@ -82,7 +133,9 @@ const About = () => {
             <div className="w-16 h-[3px] bg-main-bg" />
           </div>
           <p>
-          To be known as an East African leading producer and exporter of organic and healthy agricultural products to the global market.          </p>
+            To be known as an East African leading producer and exporter of
+            organic and healthy agricultural products to the global market.{" "}
+          </p>
         </div>
       </div>
       {/* values */}
@@ -94,11 +147,11 @@ const About = () => {
             </h1>
             <div className="w-16 h-[3px] bg-main-bg" />
           </div>
-         <li>Hard work</li>
-         <li>Professional etiquettes</li>
-         <li>High quality products and services</li>
-         <li>Excellent customer service</li>
-         <li>Confidentiality</li>
+          <li>Hard work</li>
+          <li>Professional etiquettes</li>
+          <li>High quality products and services</li>
+          <li>Excellent customer service</li>
+          <li>Confidentiality</li>
         </div>
       </div>
       {/* why you choose us */}
@@ -150,7 +203,7 @@ const About = () => {
           backgroundRepeat: "no-repeat",
           position: "relative",
           backgroundAttachment: "fixed",
-          marginBottom:60
+          marginBottom: 60,
         }}
       >
         <div className="absolute inset-0 bg-main-bg/40" />
@@ -160,7 +213,8 @@ const About = () => {
             <h1 className="text-white font-semibold capitalize text-2xl md:text-5xl text-center">
               The best Import and Export services
             </h1>
-            <button onClick={()=>navigate('/contact')}
+            <button
+              onClick={() => navigate("/contact")}
               className="font-medium bg-main-bg p-2 px-5 hover:bg-secondary-color
                text-white rounded-md hover:opacity-80"
             >
@@ -169,6 +223,9 @@ const About = () => {
           </div>
         </div>
       </div>
+
+ 
+  
     </div>
   );
 };

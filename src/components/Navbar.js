@@ -70,7 +70,16 @@ const Navbar = () => {
               >
                 HOME
               </NavLink>
-
+              <NavLink
+                to="/blog"
+                className={({ isActive }) =>
+                  isActive
+                    ? `text-secondary-color font-semibold`
+                    : `font-semibold text-dark-color hover:text-[#e36414]  transition-all duration-500`
+                }
+              >
+                Blog
+              </NavLink>
               <Menu>
                 <MenuButton
                   as={Button}

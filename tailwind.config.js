@@ -22,6 +22,6 @@ module.exports = {
   plugins: [
     // require("tailwind-scrollbar-hide"),
     // require("flowbite/plugin"),
-    // require("@tailwindcss/line-clamp"),
+    require("@tailwindcss/line-clamp"),
   ],
 };

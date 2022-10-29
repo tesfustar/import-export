@@ -38,6 +38,13 @@ const Sidebar = ({ toggle, isOpen }) => {
                 Home
               </Link>
               <Link
+                to="/blog"
+                className="font-medium uppercase text-white"
+                onClick={toggle}
+              >
+                Blog
+              </Link>
+              <Link
                 to="/about"
                 className="font-medium text-lg uppercase text-white"
                 onClick={toggle}
