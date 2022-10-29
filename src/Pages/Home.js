@@ -64,12 +64,13 @@ const Home = () => {
           {servicesData.isFetched ? (
             <div className="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
            { servicesData?.data?.data?.slice(0,6)?.map((item) => (
-                <div key={item.id} className="bg-white shadow-md w-full overflow-hidden">
+                <div key={item.id} className="bg-white shadow-md w-full overflow-hidden relative">
                 <img
                   src={item.service_photo}
                   alt=""
                   className="h-44 w-full object-cover hover:scale-110 duration-300 ease-out"
                 />
+                <p className="absolute top-3 right-3 bg-main-bg font-medium p-1 rounded-md text-sm text-white">{item.type}</p>
                 <div className="p-3 flex flex-col items-start space-y-2">
                   <div className="flex flex-col items-start w-full ">
                     <h1 className="font-semibold uppercase   text-dark-color">
