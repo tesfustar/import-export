@@ -89,7 +89,7 @@ const Banner = () => {
                 }}
               >
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0f4c5c] to-transparent" />
-                <div className="absolute z-30 top-[20%] flex flex-col items-start pl-3 md:pl-0 w-full">
+                <div className="absolute z-30 top-[20%] flex flex-col items-start  md:pl-0 w-full">
                   <div className="max-w-6xl mx-auto  w-full space-y-2 p-3 md:p-1 ">
                     <div className="flex flex-col items-start justify-start space-y-2 max-w-3xl">
                       <h1 className="font-bold text-4xl capitalize md:text-7xl text-white">

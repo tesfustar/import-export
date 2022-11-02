@@ -5,7 +5,8 @@ import {BiMap,BiPhoneCall} from 'react-icons/bi'
 import { GrFacebookOption, GrYoutube, GrLinkedinOption } from "react-icons/gr";
 import { BiChevronDown, BiChevronRight } from "react-icons/bi";
 import Logo from "../assets/logo-white.png";
-import {AiOutlineMail} from 'react-icons/ai'
+import {BsTelegram} from 'react-icons/bs'
+import {AiFillInstagram} from 'react-icons/ai'
 const Footer = () => {
   return (
     <div className="bg-[#0f4c5c] p-5">
@@ -20,16 +21,20 @@ const Footer = () => {
           Work with the best in the business. Contact us for any information
           </p>
           <div className="flex items-center space-x-2">
-            <div className="bg-[#e36414] hover:bg-secondary-bg cursor-pointer transition-all ease-out duration-500 p-2 rounded-full">
+            <div onClick={()=>window.open('https://www.facebook.com/profile.php?id=100087041719432')}
+            className="bg-[#e36414] hover:bg-secondary-bg cursor-pointer transition-all ease-out duration-500 p-2 rounded-full">
               <GrFacebookOption className="text-gray-300" />
             </div>
-            <div className="bg-[#e36414] hover:bg-secondary-bg cursor-pointer transition-all ease-out duration-500 p-2 rounded-full">
-              <IoLogoTwitter className="text-gray-300" />
+            <div onClick={()=>window.open('https://www.instagram.com/tk_export/')}
+            className="bg-[#e36414] hover:bg-secondary-bg cursor-pointer transition-all ease-out duration-500 p-2 rounded-full">
+              <AiFillInstagram className="text-gray-300" />
             </div>
-            <div className="bg-[#e36414] hover:bg-secondary-bg cursor-pointer transition-all ease-out duration-500 p-2 rounded-full">
-              <GrYoutube className="text-gray-300" />
+            <div  onClick={()=>window.open('https://t.me/tk_trading')}
+            className="bg-[#e36414] hover:bg-secondary-bg cursor-pointer transition-all ease-out duration-500 p-2 rounded-full">
+              <BsTelegram className="text-gray-300" />
             </div>
-            <div className="bg-[#e36414] hover:bg-secondary-bg cursor-pointer transition-all ease-out duration-500 p-2 rounded-full">
+            <div onClick={()=>window.open('https://www.facebook.com/profile.php?id=100087041719432')} 
+            className="bg-[#e36414] hover:bg-secondary-bg cursor-pointer transition-all ease-out duration-500 p-2 rounded-full">
               <GrLinkedinOption className="text-gray-300" />
             </div>
           </div>
@@ -108,7 +113,10 @@ const Footer = () => {
               <div className="flex flex-col items-start ">
                 <p className="font-medium text-gray-300">Phone</p>
                 <p className="text-sm text-gray-400">
-               +251 911 830 529 ,  +251 911 580 619
+                251-907444777 , 251-907444488
+                </p>
+                <p className="text-sm text-gray-400">
+                0111-471-3134
                 </p>
               </div>
             </div>

@@ -16,10 +16,10 @@ const Home = () => {
     "Content-Type": "application/json",
     Accept: "application/json",
   };
-  const servicesData = useQuery(
-    ["servicesDataApi"],
+  const servicesCategoryData = useQuery(
+    ["servicesCategoryDataApi"],
     async () =>
-      await axios.get(`${process.env.REACT_APP_BACKEND_URL}get-services`, {
+      await axios.get(`${process.env.REACT_APP_BACKEND_URL}get-service-categories`, {
         headers,
       }),
     {
@@ -61,44 +61,21 @@ const Home = () => {
         </div>
 
         <div className="w-full">
-          {servicesData.isFetched ? (
+          {servicesCategoryData.isFetched ? (
             <div>
 
             <div className="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 
             lg:grid-cols-3 gap-3">
-           { servicesData?.data?.data?.filter((item)=>item.type === "Export")?.slice(0,3)?.map((item) => (
-             <div key={item.id} className="bg-white shadow-md w-full overflow-hidden relative">
+           { servicesCategoryData?.data?.data?.map((item) => (
+             <div key={item.id} onClick={()=>navigate('/service/detail/' + item.id)}
+             className="bg-white shadow-md w-full overflow-hidden relative cursor-pointer">
                 <img
-                  src={item.service_photo}
+                  src={item.service_category_photo}
                   alt=""
                   className="h-44 w-full object-cover hover:scale-110 duration-300 ease-out"
                   />
-                <p className="absolute top-3 right-3 bg-main-bg font-medium p-1 rounded-md text-sm text-white">{item.type}</p>
-                <div className="p-3 flex flex-col items-start space-y-2">
-                  <div className="flex flex-col items-start w-full ">
-                    <h1 className="font-semibold uppercase   text-dark-color">
-                      {item.title}
-                    </h1>
-                    <div className="w-16 h-[3px] bg-main-bg" />
-                  </div>
-                  <p className="text-dark-color font-light text-sm">
-                    {item.body}
-                  </p>
-                </div>
-              </div>
-            ))}
-              </div>
-              {/* export */}
-              <div className="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 
-            lg:grid-cols-3 gap-3">
-           { servicesData?.data?.data?.filter((item)=>item.type === "Import")?.slice(0,3)?.map((item) => (
-             <div key={item.id} className="bg-white shadow-md w-full overflow-hidden relative">
-                <img
-                  src={item.service_photo}
-                  alt=""
-                  className="h-44 w-full object-cover hover:scale-110 duration-300 ease-out"
-                  />
-                <p className="absolute top-3 right-3 bg-main-bg font-medium p-1 rounded-md text-sm text-white">{item.type}</p>
+                <p className="absolute top-3 right-3 bg-main-bg font-medium p-1 px-2
+                 rounded-md text-[13px] text-white">{item.type}</p>
                 <div className="p-3 flex flex-col items-start space-y-2">
                   <div className="flex flex-col items-start w-full ">
                     <h1 className="font-semibold uppercase   text-dark-color">

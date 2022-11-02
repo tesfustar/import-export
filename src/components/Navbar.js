@@ -39,16 +39,16 @@ const Navbar = () => {
         <div className="hidden md:flex flex-col md:flex-row items-center justify-center  w-full space-x-2 ">
           <p className="text-white text-sm">tkimportandexport@gmail.com</p>
           <div className="bg-[#fff] h-6 w-[2px] " />
-          <p className="text-white text-sm">251 911 830 529</p>
+          <p className="text-white text-sm">251-907444777</p>
           <div className="bg-[#fff] h-6 w-[2px] " />
-          <p className="text-white text-sm">251 911 580 619</p>
+          <p className="text-white text-sm">251-907444488</p>
         </div>
         <div className="flex flex-col space-y-1 items-center justify-center md:hidden">
           <p className="text-white text-sm">tkimportandexport@gmail.com</p>
           <div className="flex items-center space-x-2">
-            <p className="text-white text-sm">251 911 830 529</p>
+          <p className="text-white text-sm">251-907444777</p>
             <div className="bg-[#fff] h-6 w-[2px] " />
-            <p className="text-white text-sm">251 911 580 619</p>
+            <p className="text-white text-sm">251-907444488</p>
           </div>
         </div>
       </div>

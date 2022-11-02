@@ -7,7 +7,9 @@ import emailjs from "@emailjs/browser";
 import { useToast, Checkbox } from "@chakra-ui/react";
 import axios from "axios";
 import { useMutation, useQuery } from "react-query";
-
+import {BsFillTelephoneFill} from 'react-icons/bs'
+import {MdEmail} from 'react-icons/md'
+import {FaMapMarker} from 'react-icons/fa'
 const Contact = () => {
   const headers = {
     "Content-Type": "application/json",
@@ -117,12 +119,12 @@ const Contact = () => {
       {/* we are allway with you */}
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-5 py-10 p-5">
         <div className="md:col-span-8 flex flex-col items-start space-y-4 w-full">
-          <div className="flex flex-col items-start space-y-2 w-full">
+          {/* <div className="flex flex-col items-start space-y-2 w-full">
             <h1 className="font-medium text-dark-color text-lg md:text-xl">
               We are always with <span className="text-main-color">you :)</span>
             </h1>
             <img src={two} alt="" className="w-full h-64 object-cover" />
-          </div>
+          </div> */}
           {/* form */}
           <div className="w-full">
             <div className="flex flex-col items-start space-y-1">
@@ -156,13 +158,14 @@ const Contact = () => {
                   required
                 />
               </div>
-              <div className="grid grid-cols-1">
+              <div className="w-full">
                 <Input
                   type="tel"
                   name="phone"
                   id=""
                   placeholder="Your Phone"
                   fontWeight={500}
+                  style={{widows:'100%'}}
                   color={"#737b8b"}
                 />
               </div>
@@ -189,7 +192,7 @@ const Contact = () => {
           </div>
           <div className="flex flex-col items-start space-y-2 p-3">
             <div className="flex items-start space-x-2">
-              <IoLogoTwitter className="text-main-color" />
+              <FaMapMarker className="text-main-color" />
               <div className="flex flex-col items-start ">
                 <p className="font-medium text-dark-color">Address</p>
                 <p className="text-sm text-dark-gary">
@@ -199,7 +202,7 @@ const Contact = () => {
             </div>
             {/* email */}
             <div className="flex items-start space-x-2">
-              <IoLogoTwitter className="text-main-color" />
+              <MdEmail className="text-main-color" />
               <div className="flex flex-col items-start ">
                 <p className="font-medium text-dark-color">Email</p>
                 <p className="text-sm text-dark-gary">
@@ -209,11 +212,11 @@ const Contact = () => {
             </div>
             {/* phone */}
             <div className="flex items-start space-x-2">
-              <IoLogoTwitter className="text-main-color" />
+              <BsFillTelephoneFill className="text-main-color" />
               <div className="flex flex-col items-start ">
                 <p className="font-medium text-dark-color">Phone</p>
-                <p className="text-sm text-dark-gary">+251 911 830 529</p>
-                <p className="text-sm text-dark-gary">+251 911 580 619</p>
+                <p className="text-sm text-dark-gary">+251-907444488</p>
+                <p className="text-sm text-dark-gary">+251-907444777</p>
               </div>
             </div>
           </div>
@@ -222,15 +225,16 @@ const Contact = () => {
 
       {/* map */}
       <div className="flex items-center justify-center p-5">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.797199594374!2d38.784172653678205!3d8.990800446543043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b85d3e5f25f15%3A0x81f8b24b65d0a26d!2sAfrosweden%20Real%20Estate!5e0!3m2!1sam!2set!4v1657196923630!5m2!1sam!2set"
-          width="100%"
-          height="400"
-          allowfullscreen=""
-          loading="lazy"
-          title="map"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
+
+ 
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.7521805475717!2d38.76476301410488!3d8.99493639199988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b852141934af1%3A0x49f32c81d4c722e!2zSmVtYSBCdWlsZGluZyB8IE1lc2tlbCBGbG93ZXIgfCDhjIDhiJsg4YiF4YqV4Yy7IHwg4YiY4Yi14YmA4YiNIOGNjeGIi-GLiOGIrQ!5e0!3m2!1sam!2set!4v1667201432814!5m2!1sam!2set" 
+           width="100%"
+           height="400"
+           allowfullscreen=""
+           loading="lazy"
+           title="map"
+           referrerpolicy="no-referrer-when-downgrade"
+               ></iframe>
       </div>
     </div>
   );

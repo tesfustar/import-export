@@ -58,8 +58,10 @@ const Sidebar = ({ toggle, isOpen }) => {
                   rightIcon={<BiChevronRight />}
                   fontWeight={"semibold"}
                   backgroundColor={"transparent"}
+                  padding={0}
                   color={"white"}
                   _hover={{ backgroundColor: "transparent" }}
+                  
                 >
                   SERVICES
                 </MenuButton>

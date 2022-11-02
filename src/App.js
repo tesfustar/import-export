@@ -1,6 +1,6 @@
 import React from "react";
 import { Footer, Navbar } from "./components";
-import { About, Contact, Services, Home ,ExportService,ImportServices,Blog,BlogDetail} from "./Pages";
+import { About, Contact, Services, Home ,ExportService,ImportServices,Blog,BlogDetail,ServiceByCategory} from "./Pages";
 import {  Routes, Route,Navigate } from "react-router-dom";
 const App = () => {
   return (
@@ -17,6 +17,7 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/detail/:id" element={<BlogDetail />} />
+        <Route path="/service/detail/:id" element={<ServiceByCategory />} />
       </Routes>
       <Footer />
     </div>
