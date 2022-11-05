@@ -81,7 +81,7 @@ const Home = () => {
                     <h1 className="font-semibold uppercase   text-dark-color">
                       {item.title}
                     </h1>
-                    <div className="w-16 h-[3px] bg-main-bg" />
+                    <div className="w-6 h-[3px] bg-main-bg" />
                   </div>
                   <p className="text-dark-color font-light text-sm">
                     {item.body}

@@ -32,19 +32,19 @@ const ServiceByCategory = () => {
     );
   console.log(serviceByCategoryData?.data?.data)
   return (
-    <div>
+    <div className="w-full">
 
     {/* detail */}
-    <div>
+    <div className="w-full">
       {serviceByCategoryData?.isFetched ? (
           <div className="max-w-6xl mx-auto w-full flex flex-col  items-start p-5 py-10">
           <button onClick={()=>navigate(-1)}
           className="bg-gray-300 hover:bg-gray-200 transition-all ease-in-out cursor-pointer p-2 px-3 rounded-md">Back {">"}</button>
-          <div className="pt-5  grid grid-cols-1 md:grid-cols-2 
+          <div className="pt-5 w-full grid grid-cols-1 md:grid-cols-2 
             lg:grid-cols-3 gap-3">
              {serviceByCategoryData?.data?.data?.map((item) => (
              <div key={item.id} onClick={()=>navigate('/service/detail/' + item.id)}
-             className="bg-white shadow-md w-full overflow-hidden relative ">
+             className="bg-white shadow-md  overflow-hidden relative w-full ">
                 <img
                   src={item.service_photo}
                   alt=""

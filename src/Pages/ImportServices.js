@@ -17,7 +17,7 @@ const ImportServices = () => {
   const servicesData = useQuery(
     ["servicesDataApi"],
     async () =>
-      await axios.get(`${process.env.REACT_APP_BACKEND_URL}get-services`, {
+      await axios.get(`${process.env.REACT_APP_BACKEND_URL}get-service-categories`, {
         headers,
       }),
     {
@@ -54,10 +54,11 @@ const ImportServices = () => {
               </p>
             </div>
             <div className="flex items-start justify-start md:items-end md:justify-end max-w-lg">
-              <p className="text-white font-medium text-lg text-start md:text-end">
-                We freight all over the world.The best logistics company,{" "}
-                <span className="text-secondary-color">FAST</span> and{" "}
-                <span className="text-secondary-color">SAFELY</span>
+            <p className="text-white font-medium text-lg text-start md:text-end">
+                   Your best    
+                <span className="text-secondary-color"> Import</span> and{" "}
+                <span className="text-secondary-color">Export </span>
+                choice!
               </p>
             </div>
           </div>
@@ -78,9 +79,10 @@ const ImportServices = () => {
           {servicesData.isFetched ? (
            <div className="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
             { servicesData?.data?.data?.filter((item)=>item.type === "Import")?.map((item) => (
-              <div key={item.id} className="bg-white shadow-md w-full overflow-hidden">
+              <div onClick={()=>navigate('/service/detail/' + item.id)}
+              key={item.id} className="bg-white shadow-md w-full overflow-hidden cursor-pointer">
                 <img
-                  src={item.service_photo}
+                  src={item.service_category_photo}
                   alt=""
                   className="h-44 w-full object-cover hover:scale-110 duration-300 ease-out"
                 />
@@ -89,7 +91,7 @@ const ImportServices = () => {
                     <h1 className="font-semibold uppercase   text-dark-color">
                       {item.title}
                     </h1>
-                    <div className="w-16 h-[3px] bg-main-bg" />
+                    <div className="w-6 h-[3px] bg-main-bg" />
                   </div>
                   <p className="text-dark-color font-light text-sm">
                     {item.body}

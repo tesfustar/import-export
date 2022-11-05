@@ -106,10 +106,11 @@ const Contact = () => {
               </p>
             </div>
             <div className="flex items-start justify-start md:items-end md:justify-end max-w-lg">
-              <p className="text-white font-medium text-lg text-start md:text-end">
-                We freight all over the world.The best logistics company,{" "}
-                <span className="text-main-color">FAST</span> and{" "}
-                <span className="text-main-color">SAFELY</span>
+            <p className="text-white font-medium text-lg text-start md:text-end">
+                   Your best    
+                <span className="text-secondary-color"> Import</span> and{" "}
+                <span className="text-secondary-color">Export </span>
+                choice!
               </p>
             </div>
           </div>

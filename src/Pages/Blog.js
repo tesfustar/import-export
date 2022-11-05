@@ -51,7 +51,7 @@ const Blog = () => {
         <div className="absolute z-30 top-[10%]  md:top-1/4  flex flex-col items-start w-full">
           <div className="max-w-6xl mx-auto  w-full grid grid-cols-1 md:grid-cols-2 gap-3 space-y-2 p-5 ">
             <div className="flex flex-col items-start space-y-2">
-              <h1 className="font-semibold text-white text-4xl">Services</h1>
+              <h1 className="font-semibold text-white text-4xl">Blogs</h1>
               <p className="text-dark-gray font-medium text-sm">
                 <Link to="/home" className="text-secondary-color">
                   Home
@@ -61,9 +61,10 @@ const Blog = () => {
             </div>
             <div className="flex items-start justify-start md:items-end md:justify-end max-w-lg">
               <p className="text-white font-medium text-lg text-start md:text-end">
-                We freight all over the world.The best logistics company,{" "}
-                <span className="text-secondary-color">FAST</span> and{" "}
-                <span className="text-secondary-color">SAFELY</span>
+                   Your best    
+                <span className="text-secondary-color"> Import</span> and{" "}
+                <span className="text-secondary-color">Export </span>
+                choice!
               </p>
             </div>
           </div>
