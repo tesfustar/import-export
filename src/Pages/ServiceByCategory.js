@@ -1,14 +1,9 @@
 import React from "react";
-import { Link, useNavigate,useParams } from "react-router-dom";
-import two from "../assets/one.jpg";
-import one from "../assets/three.jpg";
-import { Input, Textarea } from "@chakra-ui/react";
-import { IoLogoTwitter } from "react-icons/io";
-import OrderModal from "./components/OrderModal";
-import moment from 'moment'
-import { useMutation, useQuery } from "react-query";
+import {  useNavigate,useParams } from "react-router-dom";
+import {  useQuery } from "react-query";
 import { Circles } from "react-loader-spinner";
 import axios from "axios";
+import parse from "html-react-parser";
 const ServiceByCategory = () => {
     const navigate = useNavigate();
     const {id} = useParams()
@@ -30,7 +25,6 @@ const ServiceByCategory = () => {
         onSuccess: (res) => {},
       }
     );
-  console.log(serviceByCategoryData?.data?.data)
   return (
     <div className="w-full">
 
@@ -42,8 +36,8 @@ const ServiceByCategory = () => {
           className="bg-gray-300 hover:bg-gray-200 transition-all ease-in-out cursor-pointer p-2 px-3 rounded-md">Back {">"}</button>
           <div className="pt-5 w-full grid grid-cols-1 md:grid-cols-2 
             lg:grid-cols-3 gap-3">
-             {serviceByCategoryData?.data?.data?.map((item) => (
-             <div key={item.id} onClick={()=>navigate('/service/detail/' + item.id)}
+             {serviceByCategoryData?.data?.data?.length >0 ? serviceByCategoryData?.data?.data?.map((item) => (
+             <div key={item.id} 
              className="bg-white shadow-md  overflow-hidden relative w-full ">
                 <img
                   src={item.service_photo}
@@ -58,11 +52,11 @@ const ServiceByCategory = () => {
                     <div className="w-16 h-[3px] bg-main-bg" />
                   </div>
                   <p className="text-dark-color font-light text-sm">
-                    {item.body}
+                    {parse(item.body)}
                   </p>
                 </div>
               </div>
-            ))}
+            )) : <h1 className="font-medium text-lg text-center capitalize">no Data Found</h1>}
           </div>     
           </div>
       ) : (

@@ -2,12 +2,10 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import two from "../assets/three.jpg";
 import one from "../assets/one.jpg";
-import { Input, Textarea } from "@chakra-ui/react";
-import { IoLogoTwitter } from "react-icons/io";
-import OrderModal from "./components/OrderModal";
-import { useMutation, useQuery } from "react-query";
+import {  useQuery } from "react-query";
 import axios from "axios";
 import { Circles } from "react-loader-spinner";
+import parse from "html-react-parser";
 const ExportService = () => {
   const navigate = useNavigate()
   const headers = {
@@ -97,7 +95,7 @@ const ExportService = () => {
                     <div className="w-6 h-[3px] bg-main-bg" />
                   </div>
                   <p className="text-dark-color font-light text-sm">
-                    {item.body}
+                    {parse(item.body)}
                   </p>
                 </div>
               </div>

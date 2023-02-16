@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
 // Import Swiper styles
@@ -7,11 +7,11 @@ import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./style.css";
-import { EffectFade, Pagination, Autoplay } from "swiper";
-import { useMutation, useQuery } from "react-query";
+import { EffectFade, Autoplay } from "swiper";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { useQuery } from "react-query";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Circles } from "react-loader-spinner";
 const Banner = () => {
   const navigationPrevRef = React.useRef(null);

@@ -4,8 +4,8 @@ import two from "../assets/two.jpg";
 import { FaHandshake } from "react-icons/fa";
 import { AiFillUnlock } from "react-icons/ai";
 import { BsHandThumbsUpFill } from "react-icons/bs";
-import { HiLocationMarker, HiHandThumbUp } from "react-icons/hi";
-import { useMutation, useQuery } from "react-query";
+import { HiLocationMarker } from "react-icons/hi";
+import {  useQuery } from "react-query";
 import axios from "axios";
 const About = () => {
   const navigate = useNavigate();
@@ -14,29 +14,8 @@ const About = () => {
     Accept: "application/json",
   };
 
-  const blogsData = [
-    {
-      id: 1,
-      img: two,
-      description: "test description",
-    },
-    {
-      id: 2,
-      img: two,
-      description: "test description",
-    },
-    {
-      id: 3,
-      img: two,
-      description: "test description",
-    },
-    {
-      id: 4,
-      img: two,
-      description: "test description",
-    },
-  ];
-  const blogData = useQuery(
+ 
+ useQuery(
     ["blogDataApi"],
     async () =>
       await axios.get(`http://simple.hulum.et/api/services`, {

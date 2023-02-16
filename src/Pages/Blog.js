@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import two from "../assets/one.jpg";
-import one from "../assets/three.jpg";
-import { Input, Textarea } from "@chakra-ui/react";
-import { IoLogoTwitter } from "react-icons/io";
-import OrderModal from "./components/OrderModal";
-import { useMutation, useQuery } from "react-query";
+import parse from "html-react-parser";
+import { useQuery } from "react-query";
 import { Circles } from "react-loader-spinner";
 import axios from "axios";
 const Blog = () => {
@@ -16,7 +13,7 @@ const Blog = () => {
     Accept: "application/json",
   };
   const blogData = useQuery(
-    ["blogDataApi",page],
+    ["blogDataApi", page],
     async () =>
       await axios.get(
         `${process.env.REACT_APP_BACKEND_URL}get-blogs?page=${page}`,
@@ -61,7 +58,7 @@ const Blog = () => {
             </div>
             <div className="flex items-start justify-start md:items-end md:justify-end max-w-lg">
               <p className="text-white font-medium text-lg text-start md:text-end">
-                   Your best    
+                Your best
                 <span className="text-secondary-color"> Import</span> and{" "}
                 <span className="text-secondary-color">Export </span>
                 choice!
@@ -102,7 +99,7 @@ const Blog = () => {
                     <h1 className="font-medium uppercase line-clamp-1  text-dark-color">
                       {item.title}
                     </h1>
-                    <p className="text-sm line-clamp-2">{item.body}</p>
+                    <p className="text-sm line-clamp-2">{parse(item.body)}</p>
                     <div className="pt-3">
                       <p
                         onClick={() => navigate(`/blog/detail/${item.id}`)}
@@ -118,7 +115,8 @@ const Blog = () => {
             </div>
 
             <div className="flex items-center space-x-3 md:space-x-5">
-            <button onClick={()=>setPage(prevPage=>prevPage - 1)}
+              <button
+                onClick={() => setPage((prevPage) => prevPage - 1)}
                 className={`bg-main-bg px-5 ${
                   blogData?.data?.data?.prev_page_url == null
                     ? "hidden"
@@ -127,13 +125,14 @@ const Blog = () => {
               >
                 Previous
               </button>
-              <button onClick={()=>setPage(prevPage=>prevPage + 1)}
-              className={`bg-main-bg px-5 ${
-                blogData?.data?.data?.next_page_url == null
-                  ? "hidden"
-                  : "flex"
-              } text-white font-medium rounded-sm hover:bg-[#e36414]  p-2`}
-               >
+              <button
+                onClick={() => setPage((prevPage) => prevPage + 1)}
+                className={`bg-main-bg px-5 ${
+                  blogData?.data?.data?.next_page_url == null
+                    ? "hidden"
+                    : "flex"
+                } text-white font-medium rounded-sm hover:bg-[#e36414]  p-2`}
+              >
                 Next
               </button>
             </div>

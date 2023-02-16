@@ -2,11 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import two from "../assets/one.jpg";
 import { Input, Textarea } from "@chakra-ui/react";
-import { IoLogoTwitter } from "react-icons/io";
 import emailjs from "@emailjs/browser";
-import { useToast, Checkbox } from "@chakra-ui/react";
+import { useToast } from "@chakra-ui/react";
 import axios from "axios";
-import { useMutation, useQuery } from "react-query";
+import { useMutation } from "react-query";
 import {BsFillTelephoneFill} from 'react-icons/bs'
 import {MdEmail} from 'react-icons/md'
 import {FaMapMarker} from 'react-icons/fa'

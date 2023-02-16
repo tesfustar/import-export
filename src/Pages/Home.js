@@ -1,15 +1,15 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import two from "../assets/one.jpg";
 import Banner from "./components/Banner";
-import OrderModal from "./components/OrderModal";
 import { FaHandshake } from "react-icons/fa";
 import { AiFillUnlock } from "react-icons/ai";
 import { BsHandThumbsUpFill } from "react-icons/bs";
-import { HiLocationMarker, HiHandThumbUp } from "react-icons/hi";
-import { useMutation, useQuery } from "react-query";
+import { HiLocationMarker } from "react-icons/hi";
+import {  useQuery } from "react-query";
 import { Circles } from "react-loader-spinner";
 import axios from "axios";
+import parse from "html-react-parser";
 const Home = () => {
   const navigate = useNavigate()
   const headers = {
@@ -84,7 +84,7 @@ const Home = () => {
                     <div className="w-6 h-[3px] bg-main-bg" />
                   </div>
                   <p className="text-dark-color font-light text-sm">
-                    {item.body}
+                    {parse(item.body)}
                   </p>
                 </div>
               </div>
@@ -130,7 +130,7 @@ const Home = () => {
                   <h1 className="font-medium text-lg uppercase line-clamp-1  text-dark-color">
                     {item.title}
                   </h1>
-                  <p className="text-sm line-clamp-2">{item.body}</p>
+                  <p className="text-sm line-clamp-2">{parse(item.body)}</p>
                 <div className="pt-3">
                   <p onClick={()=>navigate(`/blog/detail/${item.id}`)}
                    className="text-main-color hover:text-secondary-color cursor-pointer
